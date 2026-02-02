@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Duat Judgment Interface</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+<div class="altar">
+
+{% if stage == 0 %}
+<h1>⚖ ACCESS SEALED ⚖</h1>
+<p>Speak the inscription that awakens the ancient seal.</p>
+
+<form method="POST">
+  <input type="hidden" name="stage" value="{{ stage }}">
+  <input type="hidden" name="attempts" value="{{ attempts }}">
+  <input name="input" placeholder="Inscription of Awakening">
+  <button>ENTER</button>
+</form>
+
+{% elif stage == 1 %}
+<h1>📜 THE LAWS OF MA’AT</h1>
+
+<div class="rulebook">
+
+<h2 class="rule-title">THE GOLDEN RULE</h2>
+<p class="golden-rule">
+When a deed fits more than one category, score it based on the villain's
+<b>main intent</b>, not the side effects.
+</p>
+
+<hr>
+
+<h2 class="category">GOOD DEEDS</h2>
+
+<div class="rule-item"><span>Life Saving</span><span class="points positive">+500</span></div>
+<div class="rule-item"><span>Provisioning & Infrastructure</span><span class="points positive">+250</span></div>
+<div class="rule-item"><span>Innovation & Knowledge</span><span class="points positive">+600</span></div>
+<div class="rule-item"><span>Economic Support</span><span class="points positive">+600</span></div>
+<div class="rule-item"><span>Loyalty & Personal Bonds</span><span class="points positive">+100</span></div>
+<div class="rule-item"><span>Charity & Direct Help</span><span class="points positive">+500</span></div>
+<div class="rule-item"><span>Justice & Anti-Corruption</span><span class="points positive">+600</span></div>
+<div class="rule-item"><span>Unity & Peacebuilding</span><span class="points positive">+400</span></div>
+<div class="rule-item"><span>Honor & Promise-Keeping</span><span class="points positive">+600</span></div>
+<div class="rule-item"><span>Redemption & Self-Sacrifice</span><span class="points positive">+200</span></div>
+
+<hr>
+
+<h2 class="category bad">BAD DEEDS</h2>
+
+<div class="rule-item"><span>Homicide & Mass Killing</span><span class="points negative">-250</span></div>
+<div class="rule-item"><span>Personal Betrayal</span><span class="points negative">-500</span></div>
+<div class="rule-item"><span>Systemic Oppression & Tyranny</span><span class="points negative">-200</span></div>
+<div class="rule-item"><span>Physical Destruction</span><span class="points negative">-200</span></div>
+<div class="rule-item"><span>Manipulation & Deception</span><span class="points negative">-200</span></div>
+<div class="rule-item"><span>Selfish / Enjoyment Killing</span><span class="points negative">-1100</span></div>
+<div class="rule-item"><span>Psychological Cruelty & Terror</span><span class="points negative">-600</span></div>
+<div class="rule-item"><span>Petty & Opportunistic Crime</span><span class="points negative">-200</span></div>
+<div class="rule-item"><span>Abuse of Official Power</span><span class="points negative">-400</span></div>
+<div class="rule-item"><span>Reckless Endangerment</span><span class="points negative">-200</span></div>
+
+<p class="anubis">
+“I cannot judge without balance.  
+You must judge in my place.”
+</p>
+
+</div>
+
+<form method="POST">
+  <input type="hidden" name="stage" value="{{ stage }}">
+  <input type="hidden" name="attempts" value="{{ attempts }}">
+  <button>I ACCEPT THE LAWS</button>
+</form>
+
+{% elif stage == 2 %}
+<h1>⚖ JUDGMENT & EXECUTION ⚖</h1>
+
+<p>Name the soul who stole the Feather.</p>
+<p>Speak the spell that destroys him.</p>
+
+<form method="POST">
+  <input type="hidden" name="stage" value="{{ stage }}">
+  <input type="hidden" name="attempts" value="{{ attempts }}">
+  <input name="villain" placeholder="Name of the Condemned">
+  <input name="spell" placeholder="Spell of Destruction">
+  <button>CAST JUDGMENT</button>
+</form>
+
+{% elif stage == 3 %}
+<h1>🖤 THE FALL OF VADER 🖤</h1>
+
+<p class="anubis">
+"You have destroyed me…  
+The Feather lies hidden.  
+Restore the Scale… if you can."
+</p>
+
+<hr>
+
+<p>Enter the restoration incantation.</p>
+
+<form method="POST">
+  <input type="hidden" name="stage" value="{{ stage }}">
+  <input type="hidden" name="attempts" value="{{ attempts }}">
+  <input name="input" placeholder="Restoration Spell">
+  <button>RESTORE</button>
+</form>
+
+{% elif stage == 4 %}
+<h1>⚖ BALANCE IS RESTORED ⚖</h1>
+
+<p>The Feather is pure.</p>
+<p>The Scale stands whole.</p>
+
+<p class="anubis">
+“Mortals…  
+Your hearts are light.  
+You may return.”
+</p>
+
+<h2>VICTORY.</h2>
+
+{% elif stage == -1 %}
+<h1>❌ JUDGMENT PASSED ❌</h1>
+
+<p>Your answers have failed the Duat.</p>
+
+<p class="anubis">
+“Return to the living.  
+You may not judge again.”
+</p>
+
+<h2>ELIMINATED.</h2>
+
+{% endif %}
+
+{% if error %}
+<p class="error">{{ error }}</p>
+{% endif %}
+
+</div>
+</div>
+
+</body>
+</html>
