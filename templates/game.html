@@ -10,75 +10,165 @@
 <div class="altar">
 
 {% if stage == 0 %}
-<h1>⚖ ACCESS SEALED ⚖</h1>
-<p>Speak the inscription that awakens the ancient seal.</p>
+<h1>𓂀 THE DUAT AWAITS 𓂀</h1>
+
+<p>
+You are a team of archaeologists who have stepped beyond the mortal world.
+The Feather of Ma’at has been stolen.
+The Scales of Judgment stand unbalanced.
+</p>
+
+<p class="anubis">
+“Only those whose hearts are light may restore what has been broken.”
+</p>
+
+<form method="POST">
+  <input type="hidden" name="stage" value="{{ stage }}">
+  <button>ENTER THE DUAT</button>
+</form>
+
+{% elif stage == 1 %}
+<h1>⚖ ACCESS THE HALL OF JUDGMENT ⚖</h1>
+
+<p>Speak the ancient word that unlocks the Hall of Weighing.</p>
 
 <form method="POST">
   <input type="hidden" name="stage" value="{{ stage }}">
   <input type="hidden" name="attempts" value="{{ attempts }}">
   <input name="input" placeholder="Inscription of Awakening">
-  <button>ENTER</button>
+  <button>UNSEAL</button>
 </form>
 
-{% elif stage == 1 %}
+{% elif stage == 2 %}
 <h1>📜 THE LAWS OF MA’AT</h1>
 
 <div class="rulebook">
 
 <h2 class="rule-title">THE GOLDEN RULE</h2>
 <p class="golden-rule">
-When a deed fits more than one category, score it based on the villain's
-<b>main intent</b>, not the side effects.
+When a deed seems to fit more than one category,
+score it based on the villain's <b>main intent</b>,
+not the side effects.
 </p>
 
 <hr>
 
-<h2 class="category">GOOD DEEDS</h2>
+<h2 class="category">GOOD DEEDS (+Life Points)</h2>
 
-<div class="rule-item"><span>Life Saving</span><span class="points positive">+500</span></div>
-<div class="rule-item"><span>Provisioning & Infrastructure</span><span class="points positive">+250</span></div>
-<div class="rule-item"><span>Innovation & Knowledge</span><span class="points positive">+600</span></div>
-<div class="rule-item"><span>Economic Support</span><span class="points positive">+600</span></div>
-<div class="rule-item"><span>Loyalty & Personal Bonds</span><span class="points positive">+100</span></div>
-<div class="rule-item"><span>Charity & Direct Help</span><span class="points positive">+500</span></div>
-<div class="rule-item"><span>Justice & Anti-Corruption</span><span class="points positive">+600</span></div>
-<div class="rule-item"><span>Unity & Peacebuilding</span><span class="points positive">+400</span></div>
-<div class="rule-item"><span>Honor & Promise-Keeping</span><span class="points positive">+600</span></div>
-<div class="rule-item"><span>Redemption & Self-Sacrifice</span><span class="points positive">+200</span></div>
-
-<hr>
-
-<h2 class="category bad">BAD DEEDS</h2>
-
-<div class="rule-item"><span>Homicide & Mass Killing</span><span class="points negative">-250</span></div>
-<div class="rule-item"><span>Personal Betrayal</span><span class="points negative">-500</span></div>
-<div class="rule-item"><span>Systemic Oppression & Tyranny</span><span class="points negative">-200</span></div>
-<div class="rule-item"><span>Physical Destruction</span><span class="points negative">-200</span></div>
-<div class="rule-item"><span>Manipulation & Deception</span><span class="points negative">-200</span></div>
-<div class="rule-item"><span>Selfish / Enjoyment Killing</span><span class="points negative">-1100</span></div>
-<div class="rule-item"><span>Psychological Cruelty & Terror</span><span class="points negative">-600</span></div>
-<div class="rule-item"><span>Petty & Opportunistic Crime</span><span class="points negative">-200</span></div>
-<div class="rule-item"><span>Abuse of Official Power</span><span class="points negative">-400</span></div>
-<div class="rule-item"><span>Reckless Endangerment</span><span class="points negative">-200</span></div>
-
-<p class="anubis">
-“I cannot judge without balance.  
-You must judge in my place.”
-</p>
-
+<div class="rule-card">
+  <h3>1. Life Saving <span class="points positive">+500</span></h3>
+  <p>Directly prevents deaths or serious physical harm through rescue, protection, or medical intervention.</p>
 </div>
 
-<form method="POST">
-  <input type="hidden" name="stage" value="{{ stage }}">
-  <input type="hidden" name="attempts" value="{{ attempts }}">
-  <button>I ACCEPT THE LAWS</button>
-</form>
+<div class="rule-card">
+  <h3>2. Provisioning & Infrastructure <span class="points positive">+250</span></h3>
+  <p>Builds or maintains physical structures (roads, bridges, housing, utilities).</p>
+</div>
 
-{% elif stage == 2 %}
-<h1>⚖ JUDGMENT & EXECUTION ⚖</h1>
+<div class="rule-card">
+  <h3>3. Innovation & Knowledge <span class="points positive">+600</span></h3>
+  <p>Creates new technology, science, or spreads education and wisdom.</p>
+</div>
 
-<p>Name the soul who stole the Feather.</p>
-<p>Speak the spell that destroys him.</p>
+<div class="rule-card">
+  <h3>4. Economic Support <span class="points positive">+600</span></h3>
+  <p>Creates jobs, improves livelihoods, or stabilizes economy without mass coercion.</p>
+</div>
+
+<div class="rule-card">
+  <h3>5. Loyalty & Personal Bonds <span class="points positive">+100</span></h3>
+  <p>Demonstrates genuine loyalty and support to friends, family, or companions.</p>
+</div>
+
+<div class="rule-card">
+  <h3>6. Charity & Direct Help <span class="points positive">+500</span></h3>
+  <p>Gives money, resources, or assistance to the weak, poor, or vulnerable.</p>
+</div>
+
+<div class="rule-card">
+  <h3>7. Justice & Anti-Corruption <span class="points positive">+600</span></h3>
+  <p>Takes action to stop injustice, crime, or corrupt systems.</p>
+</div>
+
+<div class="rule-card">
+  <h3>8. Unity & Peacebuilding <span class="points positive">+400</span></h3>
+  <p>Reduces conflict between groups and promotes cooperation and harmony.</p>
+</div>
+
+<div class="rule-card">
+  <h3>9. Honor & Promise-Keeping <span class="points positive">+600</span></h3>
+  <p>Keeps oaths and follows a personal code even when inconvenient.</p>
+</div>
+
+<div class="rule-card">
+  <h3>10. Redemption & Self-Sacrifice <span class="points positive">+200</span></h3>
+  <p>Genuinely changes course or sacrifices oneself for others' benefit.</p>
+</div>
+
+<hr>
+
+<h2 class="category bad">BAD DEEDS (–Life Points)</h2>
+
+<div class="rule-card">
+  <h3>1. Homicide & Mass Killing <span class="points negative">-250</span></h3>
+  <p>Killing people where death is the primary goal or main outcome.</p>
+</div>
+
+<div class="rule-card">
+  <h3>2. Personal Betrayal <span class="points negative">-500</span></h3>
+  <p>Backstabbing or turning against friends, family, or trusted allies.</p>
+</div>
+
+<div class="rule-card">
+  <h3>3. Systemic Oppression & Tyranny <span class="points negative">-200</span></h3>
+  <p>Using formal power (king, president, CEO) to control or crush groups at scale.</p>
+</div>
+
+<div class="rule-card">
+  <h3>4. Physical Destruction <span class="points negative">-200</span></h3>
+  <p>Smashing, bombing, or ruining buildings/infrastructure through vandalism or sabotage.</p>
+</div>
+
+<div class="rule-card">
+  <h3>5. Manipulation & Deception <span class="points negative">-200</span></h3>
+  <p>Using lies, gaslighting, or schemes where mental/emotional control is the core.</p>
+</div>
+
+<div class="rule-card">
+  <h3>6. Selfish or Enjoyment-Based Killing <span class="points negative">-1100</span></h3>
+  <p>Killing mainly for money, ego, fun, or personal convenience.</p>
+</div>
+
+<div class="rule-card">
+  <h3>7. Psychological Cruelty & Terror <span class="points negative">-600</span></h3>
+  <p>Causing fear, trauma, or long-term emotional/mental damage without directly killing.</p>
+</div>
+
+<div class="rule-card">
+  <h3>8. Petty & Opportunistic Crime <span class="points negative">-200</span></h3>
+  <p>Theft, robbery, smuggling, or illegal acts for personal gain without formal power.</p>
+</div>
+
+<div class="rule-card">
+  <h3>9. Abuse of Official Power <span class="points negative">-400</span></h3>
+  <p>Misusing a formal title/role for personal advantage instead of duty.</p>
+</div>
+
+<div class="rule-card">
+  <h3>10. Reckless Endangerment of Innocents <span class="points negative">-200</span></h3>
+  <p>Putting bystanders at serious risk without intent to kill them.</p>
+</div>
+
+</div>
+<hr>
+
+<h2>⚖ JUDGMENT & EXECUTION ⚖</h2>
+
+<p>
+Study the laws carefully.
+Name the thief whose heart outweighs the Feather.
+Speak the spell that destroys him.
+</p>
 
 <form method="POST">
   <input type="hidden" name="stage" value="{{ stage }}">
@@ -92,32 +182,40 @@ You must judge in my place.”
 <h1>🖤 THE FALL OF VADER 🖤</h1>
 
 <p class="anubis">
-"You have destroyed me…  
-The Feather lies hidden.  
-Restore the Scale… if you can."
+“You have destroyed me…
+But balance is not yet restored.
+Repair the Scale… if you can.”
 </p>
 
 <hr>
 
-<p>Enter the restoration incantation.</p>
+<p>Speak the restoration incantation.</p>
 
 <form method="POST">
   <input type="hidden" name="stage" value="{{ stage }}">
   <input type="hidden" name="attempts" value="{{ attempts }}">
-  <input name="input" placeholder="Restoration Spell">
-  <button>RESTORE</button>
+  <input name="repair" placeholder="Restoration Spell">
+  
+  <br><br>
+  
+  <p><b>Who was the creator of the Feather?</b></p>
+  <input name="creator" placeholder="Creator's Name">
+  
+  <button>RESTORE BALANCE</button>
 </form>
 
 {% elif stage == 4 %}
 <h1>⚖ BALANCE IS RESTORED ⚖</h1>
 
-<p>The Feather is pure.</p>
-<p>The Scale stands whole.</p>
+<p>
+The Feather shines once more.
+The Scale stands aligned.
+The Duat is silent.
+</p>
 
 <p class="anubis">
-“Mortals…  
-Your hearts are light.  
-You may return.”
+“Your hearts are light.
+Return to the world of the living.”
 </p>
 
 <h2>VICTORY.</h2>
@@ -125,10 +223,13 @@ You may return.”
 {% elif stage == -1 %}
 <h1>❌ JUDGMENT PASSED ❌</h1>
 
-<p>Your answers have failed the Duat.</p>
+<p>
+The Duat has weighed your resolve.
+It was found wanting.
+</p>
 
 <p class="anubis">
-“Return to the living.  
+“Return to the living.
 You may not judge again.”
 </p>
 
