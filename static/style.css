@@ -1,117 +1,161 @@
 body {
-  margin: 0;
-  min-height: 100vh;
-  background:
-    radial-gradient(circle at center, rgba(255,215,120,0.08), transparent 60%),
-    linear-gradient(#070603, #020201);
-  color: #e8ddb2;
-  font-family: "Georgia", serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #0f0c06, #1c1408);
+    font-family: 'Georgia', serif;
+    color: #e8ddb2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+    width: 100%;
+    max-width: 900px;
+    padding: 40px;
 }
 
 .altar {
-  width: 65%;
-  padding: 50px;
-  background: linear-gradient(180deg, #16140d, #0b0a05);
-  border: 2px solid #bfa44a;
-  box-shadow:
-    0 0 50px rgba(191,164,74,0.25),
-    inset 0 0 40px rgba(0,0,0,0.9);
-  position: relative;
+    background: rgba(20, 15, 8, 0.9);
+    border: 1px solid rgba(191, 164, 74, 0.4);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 40px rgba(191, 164, 74, 0.15);
 }
 
 h1 {
-  letter-spacing: 3px;
-  text-align: center;
-  margin-bottom: 25px;
+    text-align: center;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+    color: #f5e9b9;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 40px;
+    letter-spacing: 2px;
 }
 
 p {
-  text-align: center;
-  line-height: 1.8;
+    line-height: 1.6;
+    text-align: center;
 }
 
 .anubis {
-  font-style: italic;
-  color: #d8c67a;
-  border-left: 3px solid #bfa44a;
-  padding-left: 15px;
-  margin-top: 20px;
+    margin-top: 25px;
+    font-style: italic;
+    color: #d8c67a;
 }
 
-input {
-  width: 65%;
-  padding: 12px;
-  margin-top: 20px;
-  background: #0f0d07;
-  border: 1px solid #bfa44a;
-  color: #f3eac4;
-  text-align: center;
-}
-
-button {
-  margin-top: 20px;
-  padding: 10px 25px;
-  background: linear-gradient(180deg, #ccb45d, #a88f3a);
-  border: none;
-  letter-spacing: 2px;
-  cursor: pointer;
-}
-
-.error {
-  margin-top: 20px;
-  color: #ff6b6b;
-  text-align: center;
-}
-
-.rule-title {
-  text-align: center;
-  letter-spacing: 3px;
-  margin-bottom: 15px;
-  color: #f5e9b9;
+.rulebook {
+    margin-top: 20px;
 }
 
 .golden-rule {
-  text-align: center;
-  font-style: italic;
-  margin-bottom: 25px;
-  color: #d8c67a;
+    text-align: center;
+    font-style: italic;
+    color: #d8c67a;
 }
 
 .category {
-  margin-top: 30px;
-  letter-spacing: 2px;
-  color: #e8ddb2;
+    margin-top: 30px;
+    letter-spacing: 2px;
+    color: #e8ddb2;
 }
 
 .category.bad {
-  color: #d27a7a;
+    color: #d27a7a;
 }
 
 .rule-item {
-  display: flex;
-  justify-content: space-between;
-  padding: 8px 0;
-  border-bottom: 1px solid rgba(191, 164, 74, 0.15);
-  font-size: 0.95rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(191, 164, 74, 0.15);
+    font-size: 0.95rem;
 }
 
 .points {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .points.positive {
-  color: #9ad68f;
+    color: #9ad68f;
 }
 
 .points.negative {
-  color: #d87a7a;
+    color: #d87a7a;
+}
+
+form {
+    margin-top: 25px;
+    text-align: center;
+}
+
+input {
+    width: 80%;
+    padding: 12px;
+    margin: 10px 0;
+    background: #1c1408;
+    border: 1px solid rgba(191, 164, 74, 0.4);
+    color: #e8ddb2;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: none;
+    border-color: #f5e9b9;
+    box-shadow: 0 0 10px rgba(245, 233, 185, 0.4);
+}
+
+button {
+    padding: 12px 25px;
+    margin-top: 10px;
+    background: transparent;
+    border: 1px solid #bfa44a;
+    color: #f5e9b9;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #bfa44a;
+    color: #0f0c06;
+    box-shadow: 0 0 15px rgba(191, 164, 74, 0.5);
+}
+
+.error {
+    margin-top: 20px;
+    text-align: center;
+    color: #d87a7a;
+    font-weight: bold;
+}
+.rule-card {
+    background: rgba(191, 164, 74, 0.05);
+    border: 1px solid rgba(191, 164, 74, 0.2);
+    padding: 15px 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.rule-card:hover {
+    background: rgba(191, 164, 74, 0.12);
+    box-shadow: 0 0 12px rgba(191, 164, 74, 0.2);
+}
+
+.rule-card h3 {
+    margin: 0 0 8px 0;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+.rule-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: left;
 }
