@@ -16,7 +16,7 @@ VALID_SPELLS = [
     "familiatraumaticus"
 ]
 
-REPAIR_CODE = "repairo"
+REPAIR_CODE = "reparo"
 
 VALID_CREATORS = [
     "maat",
