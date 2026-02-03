@@ -47,6 +47,7 @@ def game():
         # Stage 0 → Welcome → move to passcode
         if stage == 0:
             stage = 1
+            attempts = 0
 
         # Stage 1 → Passcode
         elif stage == 1:
